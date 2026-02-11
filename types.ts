@@ -7,10 +7,12 @@ export enum UserRole {
 export interface User {
   id: string;
   name: string;
+  email: string;
   role: UserRole;
 }
 
 export enum DocCategory {
+  ALL = 'Semua',
   SOP_EVENT = 'SOP Event Kreatif',
   AD_ART = 'AD/ART',
   GBHKO = 'GBHKO',
@@ -25,7 +27,8 @@ export interface Document {
   uploader: string;
   date: string;
   summary: string;
-  content: string; // Simulated content for AI context
+  content: string; 
+  views: number;
 }
 
 export interface ChatMessage {
@@ -33,8 +36,7 @@ export interface ChatMessage {
   text: string;
 }
 
-export interface ROIStat {
-  metric: string;
-  before: string;
-  after: string;
+export interface AnalyticsData {
+  name: string;
+  value: number;
 }
